@@ -2,6 +2,7 @@
 @import "libs";
 @import "fonts";
 @import "global";
+@import "media";
 
 .header {
     position: relative;
@@ -22,8 +23,6 @@
     right: 80px;
     bottom: 116px;
     text-align: right;
-    color: #ffffff;
-    text-transform: uppercase;
 }
 .slider-item__info-title {
     font-size: 80px;
@@ -59,7 +58,6 @@
     bottom: 36px;
     max-width: 920px;
     width: 100%;
-    color: #ffffff;
     .slick-current {
         .dots-box {
             border-top-color: $green;
@@ -82,6 +80,7 @@
     &__name {
         font-weight: 300;
         line-height: 19px;
+        text-transform: capitalize;
     }
 }
 
@@ -93,12 +92,10 @@
     border-right: 1px solid rgba(#ffffff, 0.25);
     height: 100vh;
     text-align: center;
-    color: #ffffff;
 }
 .header__title {
     font-size: 200px;
     line-height: 156px;
-    text-transform: uppercase;
     font-weight: 800;
     opacity: 0.07;
     max-width: 467px;
@@ -110,7 +107,6 @@
 .menu {
     padding-top: 40px;
     a {
-        color: #ffffff;
         span {
             display: block;
             font-size: 12px;
@@ -119,6 +115,7 @@
             letter-spacing: 3px;
             padding-top: 6px;
             margin-bottom: 37px;
+            text-transform: capitalize;
         }
     }
 }
@@ -148,6 +145,7 @@
     letter-spacing: 1.05px;
     position: relative;
     padding-left: 19px;
+    text-transform: capitalize;
     &::before {
         content: "";
         position: absolute;
@@ -182,4 +180,6 @@
     }
 }
 
-@import "media";
+.surf {
+    padding: 165px 0 270px;
+}
