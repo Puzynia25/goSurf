@@ -12,4 +12,11 @@ $(function () {
         slidesToScroll: 4,
         asNavFor: ".header__slider",
     });
+    $(".surf-slider").slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: '<img class="slider-arrows slider-arrows-left" src="images/arrows-left.svg" alt=""/>',
+        nextArrow: '<img class="slider-arrows slider-arrows-right" src="images/arrows-right.svg" alt=""/>',
+    });
 });

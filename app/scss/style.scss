@@ -181,5 +181,88 @@
 }
 
 .surf {
-    padding: 165px 0 270px;
+    padding: 165px 0 120px;
+    background-image: url(../images/surf-bg.png);
+    background-position: top 200px right;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    &__subtitle {
+        text-align: right;
+        padding-right: 80px;
+        margin-top: -86px;
+    }
+}
+.surf-slider {
+    padding-top: 110px;
+    .slider-arrows {
+        top: 50px;
+        opacity: 0.25;
+    }
+    .slick-slide:nth-child(4n + 1) {
+        .surf-box {
+            margin-top: 32px;
+        }
+    }
+    .slick-slide:nth-child(4n + 3) {
+        .surf-box {
+            margin-top: 89px;
+        }
+    }
+
+    .slick-current {
+        .surf-box__inner {
+            background: rgba(#1c2121, 0.3);
+        }
+        .surf-box__inner-btn {
+            display: block;
+        }
+    }
+}
+.surf-box {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__inner {
+        min-height: 750px;
+        background: rgba(#1c2121, 0.85);
+        position: relative;
+        transition: all 0.5s;
+        &:hover {
+            background: rgba(#1c2121, 0.3);
+            .surf-box__inner-btn {
+                display: block;
+            }
+        }
+    }
+}
+.surf-box__inner-title {
+    padding: 72px 0 0 40px;
+    font-size: 40px;
+    line-height: 36px;
+    font-weight: 800;
+    width: 140px;
+}
+.surf-box__inner-location {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 8px;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    height: 0;
+    width: 0;
+    white-space: nowrap;
+    span {
+        font-weight: 100;
+    }
+}
+.surf-box__inner-btn {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }

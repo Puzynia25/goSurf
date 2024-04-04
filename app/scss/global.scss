@@ -95,3 +95,34 @@ li {
         }
     }
 }
+.btn {
+    font-size: 40px;
+    line-height: 36px;
+    font-weight: 800;
+    span {
+        position: relative;
+        padding: 17px 57px 17px 17px;
+        background-color: $green;
+        display: inline-block;
+        margin-left: 19px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 1px;
+            top: 50%;
+            left: -10px;
+            background-color: #fff;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 21px;
+            top: 50%;
+            right: 17px;
+            transform: translateY(-50%);
+            background-image: url(../images/arrows-right.svg);
+        }
+    }
+}
