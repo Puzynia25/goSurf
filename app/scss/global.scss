@@ -55,6 +55,27 @@ li {
     }
 }
 
+.headline-right {
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 7.33px;
+    opacity: 0.5;
+    padding-right: 103px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 1px;
+        background-color: #ffffff;
+        margin-left: 24px;
+        right: 0;
+        top: 50%;
+    }
+}
+
 .title {
     span {
         position: relative;
@@ -95,6 +116,15 @@ li {
         }
     }
 }
+
+.descr {
+    display: inline-block;
+    padding-left: 5px;
+    &__head {
+        font-size: 40px;
+        font-weight: 800;
+    }
+}
 .btn {
     font-size: 40px;
     line-height: 36px;
@@ -125,4 +155,12 @@ li {
             background-image: url(../images/arrows-right.svg);
         }
     }
+}
+.surf,
+.holder {
+    padding: 165px 0 120px;
+}
+.holder {
+    padding-bottom: 260px;
+    margin-bottom: 35px;
 }
