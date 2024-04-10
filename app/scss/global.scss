@@ -164,3 +164,60 @@ li {
     padding-bottom: 260px;
     margin-bottom: 35px;
 }
+
+.quantity {
+    display: inline-block;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.quantity input {
+    width: 40px;
+    height: 42px;
+    border: none;
+    text-align: left;
+    background-color: transparent;
+    color: #fff;
+    font-size: 40px;
+    line-height: 36px;
+    font-weight: 800;
+}
+
+.quantity input:focus {
+    outline: 0;
+}
+
+.quantity-nav {
+    float: left;
+    height: 42px;
+}
+
+.quantity-button {
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    top: 50px;
+}
+
+.quantity-button.quantity-up {
+    position: absolute;
+    right: 0;
+}
+
+.quantity-button.quantity-down {
+    position: absolute;
+    right: 35px;
+}

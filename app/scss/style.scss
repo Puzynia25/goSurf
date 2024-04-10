@@ -456,11 +456,24 @@
     }
     .descr__head {
         position: relative;
-        padding-right: 78px;
+        padding-right: 174px;
         img {
             position: absolute;
             right: 0;
             top: 0;
+        }
+        .holder__star-list {
+            position: absolute;
+            right: 0;
+            top: 0;
+            li {
+                display: inline-block;
+            }
+            img {
+                position: static;
+                display: flex;
+                filter: drop-shadow(0 0 16px rgba($green, 0.54));
+            }
         }
     }
 
@@ -487,7 +500,7 @@
         font-weight: 800;
         padding-left: 40px;
         position: relative;
-        span {
+        .holder-pricing__span {
             font-size: 14px;
             line-height: 36px;
             letter-spacing: 5.25px;
