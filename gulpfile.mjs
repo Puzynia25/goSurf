@@ -1,6 +1,6 @@
 import gulp from "gulp";
 import gulpSass from "gulp-sass";
-import sass from "sass";
+import * as sass from "sass";
 import browserSync from "browser-sync";
 import uglify from "gulp-uglify";
 import concat from "gulp-concat";
@@ -10,8 +10,8 @@ import autoprefixer from "gulp-autoprefixer";
 const sassProcessor = gulpSass(sass);
 
 gulp.task("clean", async function () {
-    const del = (await import("del")).default;
-    await del(["dist"]);
+    const del = await import("del");
+    await del.deleteAsync(["dist"]);
 });
 
 gulp.task("scss", function () {
