@@ -719,3 +719,25 @@
         left: 0;
     }
 }
+.footer {
+    text-align: center;
+    padding: 284px 0 34px;
+    .btn {
+        span {
+            padding: 17px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.footer__copy {
+    margin-top: 27px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
+    letter-spacing: 1.05px;
+    opacity: 0.5;
+}
