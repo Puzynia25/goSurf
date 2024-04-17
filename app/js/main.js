@@ -28,7 +28,7 @@ $(function () {
         asNavFor: ".surf-slider",
         focusOnSelect: true,
     });
-    $(".holder__slider").slick({
+    $(".holder__slider, .shop__slider").slick({
         infinite: true,
         fade: true,
         prevArrow: '<img class="slider-arrows slider-arrows-left" src="images/arrows-left.svg" alt=""/>',
@@ -71,20 +71,18 @@ $(function () {
 
     $(".quantity-button").on("click", function () {
         var parents = $(this).parents(".holder-slider__info");
-        let sum =
-            $(".sum", parents).data("nights") * $(".nights", parents).val() +
-            $(".sum", parents).data("guests") * ($(".guests", parents).val() - 1) -
-            1;
+        let sum = $(".sum", parents).data("nights") * $(".nights", parents).val() + $(".sum", parents).data("guests") * ($(".guests", parents).val() - 1) - 1;
         $(".sum", parents).html("$" + sum);
     });
 
     //рассчет суммы с исходными значениями
     $(".quantity").each(function () {
         var parents = $(this).parents(".holder-slider__info");
-        let sum =
-            $(".sum", parents).data("nights") * $(".nights", parents).val() +
-            $(".sum", parents).data("guests") * ($(".guests", parents).val() - 1) -
-            1;
+        let sum = $(".sum", parents).data("nights") * $(".nights", parents).val() + $(".sum", parents).data("guests") * ($(".guests", parents).val() - 1) - 1;
         $(".sum", parents).html("$ " + sum);
+    });
+
+    $(".surfboard-box__circle").on("click", function () {
+        $(this).toggleClass("active");
     });
 });
