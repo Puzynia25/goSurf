@@ -6,6 +6,7 @@ import uglify from "gulp-uglify";
 import concat from "gulp-concat";
 import rename from "gulp-rename";
 import autoprefixer from "gulp-autoprefixer";
+import gulpGhPages from "gulp-gh-pages";
 
 const sassProcessor = gulpSass(sass);
 
@@ -66,15 +67,22 @@ gulp.task("browser-sync", function () {
 });
 
 gulp.task("export", function () {
-    let buildHtml = gulp.src("app/**/*.html").pipe(gulp.dest("dist"));
-
-    let BuildCss = gulp.src("app/css/**/*.css").pipe(gulp.dest("dist/css"));
-
-    let BuildJs = gulp.src("app/js/**/*.js").pipe(gulp.dest("dist/js"));
-
-    let BuildFonts = gulp.src("app/fonts/**/*.*").pipe(gulp.dest("dist/fonts"));
-
-    let BuildImg = gulp.src("app/img/**/*.*").pipe(gulp.dest("dist/img"));
+    const tasks = [
+        gulp.src("app/**/*.html").pipe(gulp.dest("dist")),
+        gulp.src("app/css/**/*.css").pipe(gulp.dest("dist/css")),
+        gulp.src("app/js/**/*.js").pipe(gulp.dest("dist/js")),
+        gulp.src("app/fonts/**/*.*").pipe(gulp.dest("dist/fonts")),
+        gulp.src("app/images/**/*.*").pipe(gulp.dest("dist/images")),
+    ];
+    return Promise.all(
+        tasks.map(
+            (stream) =>
+                new Promise((resolve, reject) => {
+                    stream.on("end", resolve);
+                    stream.on("error", reject);
+                })
+        )
+    );
 });
 
 gulp.task("watch", function () {
@@ -83,6 +91,10 @@ gulp.task("watch", function () {
     gulp.watch("app/js/*.js", gulp.parallel("script"));
 });
 
-gulp.task("build", gulp.series("clean", "export"));
+gulp.task("deploy", function () {
+    return gulp.src("./dist/**/*").pipe(gulpGhPages());
+});
+
+gulp.task("build", gulp.series("clean", "export", "deploy"));
 
 gulp.task("default", gulp.parallel("css", "scss", "js", "browser-sync", "watch"));

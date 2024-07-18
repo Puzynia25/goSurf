@@ -2,7 +2,6 @@
 @import "libs";
 @import "fonts";
 @import "global";
-@import "media";
 
 .header {
     position: relative;
@@ -117,6 +116,19 @@
             margin-bottom: 37px;
             text-transform: capitalize;
         }
+    }
+}
+.menu-btn {
+    display: none;
+    width: 30px;
+    position: absolute;
+    z-index: 20;
+    top: 75px;
+    right: 20px;
+    &__line {
+        height: 2px;
+        margin-bottom: 5px;
+        background-color: $green;
     }
 }
 .header__date {
@@ -741,3 +753,5 @@
     letter-spacing: 1.05px;
     opacity: 0.5;
 }
+
+@import "media";
