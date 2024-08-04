@@ -11,6 +11,12 @@ $(function () {
         slidesToShow: 4,
         slidesToScroll: 4,
         asNavFor: ".header__slider",
+        responsive: [
+            {
+                breakpoint: 961,
+                settings: "unslick",
+            },
+        ],
     });
     $(".surf-slider").slick({
         infinite: true,
@@ -19,6 +25,34 @@ $(function () {
         prevArrow: '<img class="slider-arrows slider-arrows-left" src="images/arrows-left.svg" alt=""/>',
         nextArrow: '<img class="slider-arrows slider-arrows-right" src="images/arrows-right.svg" alt=""/>',
         asNavFor: ".slider-map",
+        responsive: [
+            {
+                breakpoint: 1210,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true,
+                },
+            },
+            {
+                breakpoint: 426,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false,
+                },
+            },
+        ],
     });
     $(".slider-map").slick({
         infinite: true,
@@ -27,6 +61,28 @@ $(function () {
         arrows: false,
         asNavFor: ".surf-slider",
         focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 1103,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                    centerMode: true,
+                },
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true,
+                },
+            },
+        ],
     });
     $(".holder__slider, .shop__slider").slick({
         infinite: true,
