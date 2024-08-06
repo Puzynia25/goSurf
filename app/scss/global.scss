@@ -16,6 +16,8 @@ body {
     background-color: #171919;
     color: #fff;
     text-transform: uppercase;
+    min-width: 320px;
+    overflow-x: hidden;
 }
 
 a {
@@ -77,13 +79,16 @@ li {
 }
 
 .title {
-    span {
+    div {
         position: relative;
         font-size: 200px;
         font-weight: 800;
         color: rgba(#fff, 0.02);
         display: inline-block;
         transform: translateX(-50px);
+    }
+    span {
+        display: inline-block;
     }
     h3 {
         position: absolute;
